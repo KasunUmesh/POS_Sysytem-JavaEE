@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POS System</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <script
+      src="https://kit.fontawesome.com/4c9fb7b689.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand mb-0 h1" href="#"
+            ><img
+              src="assets/images/header _logo.png"
+              alt=""
+              width="50"
+              height="40"
+            />POS System</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  id="linkHome"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="linkOrder" href="#">Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="linkItems" href="#">Items</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="linkCustomer" href="#">Customers</a>
+              </li>
+            </ul>
+            <button class="btn btn-danger me-md-2" type="button">
+              Log Out
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home Section -->
+      <section class="container-fluid" id="homeSection">
+        <div
+          class="row align-items-center justify-content-around"
+          style="height: 92.9vh; background-image: url(assets/images/back3.jpg)"
+        >
+          <div
+            class="col-2 m-5 shadow p-3 mb-5 rounded-3"
+            style="height: 400px; background-color: #9ec5fe; z-index: 1"
+          >
+            <img
+              class="rounded mx-auto d-block m-5"
+              style="height: 150px"
+              src="assets/images/shopping-cart.png"
+              alt=""
+            />
+            <div class="d-grid gap-2 col-5 mx-auto">
+              <a id="btnOrder" href="#"
+                ><button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  style="width: 150px"
+                >
+                  Orders
+                </button></a
+              >
+            </div>
+          </div>
+
+          <div
+            class="col-2 m-5 shadow p-3 mb-5 rounded-3"
+            style="height: 400px; background-color: #9ec5fe; z-index: 1"
+          >
+            <img
+              class="rounded mx-auto d-block m-5"
+              style="height: 140px"
+              src="assets/images/stand.png"
+              alt=""
+            />
+            <div class="d-grid gap-2 col-5 mx-auto">
+              <a id="btnItems" href="#"
+                ><button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  style="width: 150px"
+                >
+                  Items
+                </button></a
+              >
+            </div>
+          </div>
+
+          <div
+            class="col-2 m-5 shadow p-3 mb-5 rounded-3"
+            style="height: 400px; background-color: #9ec5fe"
+          >
+            <img
+              class="rounded mx-auto d-block m-5"
+              style="height: 140px"
+              src="assets/images/customer.png"
+              alt=""
+            />
+            <div class="d-grid gap-2 col-5 mx-auto">
+              <a id="btnCustomer" href="#"
+                ><button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  style="width: 150px"
+                >
+                  Customers
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Orders Section -->
+      <section class="container-fluid" id="orderSection">
+        <!-- Row One Start -->
+        <div
+          class="row position-relative bg-secondary bg-opacity-10 shadow rounded"
+          style="width: 92.7%; left: 80px"
+        >
+          <!-- COl One Start -->
+          <div class="col-4 m-4 bg-light shadow mb-5 bg-body rounded">
+            <h2
+              class="bg-success text-light p-2 position-relative mb-4"
+              style="right: 12px; width: 104%"
+            >
+              Invoice Details
+            </h2>
+            <form class="row">
+              <div class="col-6 mb-3">
+                <label for="orderId" class="col-form-label">Order ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Order ID"
+                  aria-label="Enter Order ID"
+                  id="orderId"
+                />
+              </div>
+
+              <div class="col-6 mb-3">
+                <label for="date" class="col-form-label">Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  placeholder="Enter Date"
+                  aria-label="Enter Date"
+                  id="date"
+                />
+              </div>
+
+              <div class="col-6 mb-3">
+                <label for="customerID" class="col-form-label"
+                  >Customer ID</label
+                >
+                <select
+                  id="customerID"
+                  name="customerID"
+                  class="form-select"
+                  aria-label="Default select example"
+                ></select>
+              </div>
+
+              <div class="col-6 mb-3">
+                <label for="cusName" class="col-form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Name"
+                  aria-label="Enter Name"
+                  id="cusName"
+                />
+              </div>
+
+              <div class="col-6 mb-3">
+                <label for="cusSalary" class="col-form-label">Salary</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Salary"
+                  aria-label="Enter Salary"
+                  id="cusSalary"
+                />
+              </div>
+
+              <div class="mb-4 col-6">
+                <label for="cusAddress" class="col-form-label">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Address"
+                  aria-label="Enter Address"
+                  id="cusAddress"
+                />
+              </div>
+            </form>
+          </div>
+          <!-- COl One End -->
+
+          <!-- Col Two Start -->
+          <div class="col-5 m-4 bg-light shadow mb-5 bg-body rounded">
+            <h2
+              class="bg-success text-light p-2 position-relative mb-4"
+              style="right: 12px; width: 103.2%"
+            >
+              Item Select
+            </h2>
+
+            <form class="row">
+              <div class="col-6 mb-3">
+                <label for="itemCode" class="col-form-label">Item Code</label>
+                <select
+                  id="itemCode"
+                  name="itemCode"
+                  class="form-select"
+                  aria-label="Default select example"
+                ></select>
+              </div>
+
+              <div class="col-6 mb-3">
+                <label for="itemName" class="col-form-label">Item Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Item Name"
+                  aria-label="Enter Item Name"
+                  id="itemName"
+                />
+              </div>
+
+              <div class="col-3 mb-3">
+                <label for="itemPrice" class="col-form-label">Price</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Price"
+                  aria-label="Enter Price"
+                  id="itemPrice"
+                />
+              </div>
+
+              <div class="col-3 mb-3">
+                <label for="qty" class="col-form-label">Qty On Hand</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter QtyOnH"
+                  aria-label="Enter QtyOnH"
+                  id="qty"
+                />
+              </div>
+
+              <div class="col mb-4">
+                <label for="orderQty" class="col-form-label"
+                  >Order Quantity</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Order Quantity"
+                  aria-label="Enter Order Quantity"
+                  id="orderQty"
+                />
+              </div>
+              <div class="col mb-4">
+                <label for="total" class="col-form-label">Total</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Total Price"
+                  aria-label="Total Price"
+                  id="total"
+                />
+              </div>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button
+                  id="btn_add_Item"
+                  class="btn btn-danger me-md-2 btn-lg"
+                  type="button"
+                >
+                  Add Item
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Col Two End -->
+
+          <!-- Col Three Start -->
+          <div class="col m-4 mb-5 bg-light shadow bg-body rounded">
+            <h2
+              class="bg-success text-light p-2 position-relative mb-4"
+              style="right: 12px; width: 109.2%"
+            >
+              Purchase Order
+            </h2>
+
+            <form class="row">
+              <div class="col mb-5">
+                <label for="totalPrice" class="col-form-label"
+                  >Total Price</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Total Price"
+                  aria-label="Total Price"
+                  id="totalPrice"
+                />
+              </div>
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <button
+                  id="purchase_order"
+                  class="btn btn-success me-md-2 btn-lg"
+                  type="button"
+                >
+                  Purchase
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Col Three End -->
+
+          <!-- Col four Start -->
+          <div class="col-12 p-3">
+            <table class="table table-hover table-borderless">
+              <thead style="background-color: #00918d">
+                <tr>
+                  <th class="border-end border-white" scope="col">Order ID</th>
+                  <th class="border-end border-white" scope="col">
+                    Customer ID
+                  </th>
+                  <th class="border-end border-white" scope="col">Item Code</th>
+                  <th class="border-end border-white" scope="col">Quantity</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody id="orderItemDetal_table" class="table-secondary"></tbody>
+            </table>
+          </div>
+          <!-- Col four End -->
+        </div>
+        <!-- Row One End -->
+      </section>
+
+      <!-- Items Section -->
+      <section class="container-fluid" id="itemSection">
+        <!-- Row One -->
+        <div class="row justify-content-center">
+          <!-- Col One -->
+          <div class="col-11 m-3 shadow rounded bg-dark bg-opacity-10">
+            <i class="fa-solid fa-boxes-stacked fs-1 position-absolute m-2"></i>
+            <p class="h1 position-relative fw-bold" style="left: 80px">Items</p>
+          </div>
+        </div>
+        <!-- Row One End-->
+
+        <!-- Row Two Start -->
+        <div
+          class="row position-relative bg-secondary bg-opacity-10 shadow rounded"
+          style="width: 92.7%; left: 80px"
+        >
+          <!-- Col Two Start -->
+          <div class="col-4 m-4 bg-light shadow mb-5 bg-body rounded">
+            <h2
+              class="bg-success text-light p-2 position-relative mb-4"
+              style="right: 12px; width: 104%"
+            >
+              New Item
+            </h2>
+
+            <div
+              class="btn-group btn-group-lg justify-content-md-center d-md-flex p-4 m-2"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="item_code" class="col-form-label"
+                      >Item Code</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Item Code"
+                      aria-label="Enter Item Code"
+                      id="item_code"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="item-name" class="col-form-label"
+                      >Item Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Item Name"
+                      aria-label="Enter Item Name"
+                      id="item_name"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="price" class="col-form-label">Price</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Price"
+                      aria-label="Enter Price"
+                      id="item_price"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="qty" class="col-form-label">Quantity</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Quantity"
+                      aria-label="Enter Quantity"
+                      id="item_qty"
+                    />
+                  </div>
+                </form>
+                <button id="btn_itemAdd" type="button" class="btn btn-primary">
+                  Save
+                </button>
+                <button
+                  id="btn_itemUpdate"
+                  type="button"
+                  class="btn btn-warning"
+                >
+                  Update
+                </button>
+                <button
+                  id="btn_itemDelete"
+                  type="button"
+                  class="btn btn-danger"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Col Two End -->
+
+          <!-- COl One Start -->
+          <div class="col-4 m-4 bg-light shadow mb-5 bg-body rounded">
+            <h2
+              class="bg-success text-light p-2 position-relative mb-4"
+              style="right: 12px; width: 104%"
+            >
+              Item Search
+            </h2>
+            <form>
+              <div class="mb-4">
+                <input
+                  class="form-control p-2"
+                  type="search"
+                  placeholder="Input Item Name/Code Here"
+                  aria-label="Search"
+                />
+              </div>
+              <button class="btn btn-success mb-2" type="submit">Search</button>
+
+              <select
+                class="form-select position-relative"
+                style="width: 100px; bottom: 46px; left: 95px"
+                aria-label="Default select example"
+              >
+                <option value="1">Name</option>
+                <option value="2">Code</option>
+              </select>
+            </form>
+          </div>
+          <!-- COl One End -->
+
+          <!-- Col four Start -->
+          <div class="col-12 p-3">
+            <table class="table table-hover table-borderless">
+              <thead style="background-color: #00918d">
+                <tr>
+                  <th class="border-end border-white" scope="col">Item Code</th>
+                  <th class="border-end border-white" scope="col">Item Name</th>
+                  <th class="border-end border-white" scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody id="tbl_item" class="table-secondary"></tbody>
+            </table>
+          </div>
+          <!-- Col four End -->
+        </div>
+        <!-- Row Two End -->
+      </section>
+
+      <!-- Customer Section -->
+      <section class="container-fluid" id="customerSection">
+        <!-- Row One -->
+        <div class="row justify-content-center">
+          <!-- Col One -->
+          <div class="col-11 m-3 shadow rounded bg-dark bg-opacity-10">
+            <i class="fa-solid fa-users fs-1 position-absolute m-2"> </i>
+            <p class="h1 position-relative fw-bold" style="left: 80px">
+              Customers
+            </p>
+          </div>
+        </div>
+        <!-- Row One End-->
+
+        <!-- Row Two Start -->
+        <div
+          class="row position-relative bg-secondary bg-opacity-10 shadow rounded"
+          style="width: 92.7%; left: 80px"
+        >
+          <!-- Col Two Start -->
+          <div class="col-4 m-4 bg-light shadow mb-5 bg-body rounded">
+            <h2
+              class="bg-success text-light p-2 position-relative mb-4"
+              style="right: 12px; width: 104%"
+            >
+              Customer Edit
+            </h2>
+
+            <div
+              class="btn-group btn-group-lg justify-content-md-center d-md-flex p-4 m-2"
+              role="group"
+              aria-label="Basic mixed styles example"
+            >
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="id" class="col-form-label">ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter ID"
+                      aria-label="Enter ID"
+                      id="customer_id"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="name" class="col-form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Name"
+                      aria-label="Enter Name"
+                      id="customer_name"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="address" class="col-form-label">Address</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Address"
+                      aria-label="Enter Address"
+                      id="customer_address"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="salary" class="col-form-label">Salary</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Salary"
+                      aria-label="Enter Salary"
+                      id="customer_salary"
+                    />
+                  </div>
+                </form>
+                <input
+                  class="btn btn-primary"
+                  type="button"
+                  value="Add"
+                  id="btn_add"
+                />
+                <button
+                  id="btn_CustomerDelete"
+                  type="button"
+                  class="btn btn-danger"
+                >
+                  Delete
+                </button>
+                <button
+                  id="btn_CustomerUpdate"
+                  type="button"
+                  class="btn btn-warning"
+                >
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Col Two End -->
+          <!-- COl One Start -->
+          <div class="col-4 m-4 bg-light shadow mb-5 bg-body rounded">
+            <h2
+              class="bg-success text-light p-2 position-relative mb-4"
+              style="right: 12px; width: 104%"
+            >
+              Customer Search
+            </h2>
+            <form>
+              <div class="mb-4">
+                <input
+                  class="form-control p-2"
+                  type="search"
+                  placeholder="Input Name/NIC/Tp Here"
+                  aria-label="Search"
+                />
+              </div>
+              <button class="btn btn-success mb-2" type="submit">Search</button>
+
+              <select
+                class="form-select position-relative"
+                style="width: 100px; bottom: 46px; left: 95px"
+                aria-label="Default select example"
+              >
+                <option value="1">Name</option>
+                <option value="2">NIC</option>
+                <option value="3">Tp</option>
+              </select>
+            </form>
+          </div>
+          <!-- COl One End -->
+
+          <!-- Col four Start -->
+          <div class="col-12 p-3">
+            <table class="table table-hover table-borderless">
+              <thead style="background-color: #00918d">
+                <tr>
+                  <th class="border-end border-white" scope="col">ID</th>
+                  <th class="border-end border-white" scope="col">Name</th>
+                  <th class="border-end border-white" scope="col">Address</th>
+                  <th scope="col">Salary</th>
+                </tr>
+              </thead>
+              <tbody id="tbl_Customer" class="table-secondary"></tbody>
+            </table>
+          </div>
+          <!-- Col four End -->
+        </div>
+        <!-- Row Two End -->
+      </section>
+    </main>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/JQuery/jquery-3.6.4.min.js"></script>
+
+    <script type="module" src="db/CustomerDB.js"></script>
+    <script type="module" src="db/ItemDB.js"></script>
+    <script type="module" src="db/OrderDB.js"></script>
+    <script type="module" src="model/Orders.js"></script>
+    <script type="module" src="model/orderDetails.js"></script>
+    <script type="module" src="model/Customer.js"></script>
+    <script type="module" src="model/Item.js"></script>
+    <script type="module" src="controller/ItemController.js"></script>
+    <script type="module" src="controller/CustomerController.js"></script>
+    <script type="module" src="controller/OrderController.js"></script>
+
+    <script>
+      // Hide All Content
+      $("#homeSection").css("display", "block");
+      $("#orderSection").css("display", "none");
+      $("#itemSection").css("display", "none");
+      $("#customerSection").css("display", "none");
+
+      $("#linkHome").click(function () {
+        $("#homeSection").css("display", "block");
+        $("#orderSection").css("display", "none");
+        $("#itemSection").css("display", "none");
+        $("#customerSection").css("display", "none");
+      });
+
+      $("#linkOrder").click(function () {
+        $("#homeSection").css("display", "none");
+        $("#orderSection").css("display", "block");
+        $("#itemSection").css("display", "none");
+        $("#customerSection").css("display", "none");
+      });
+
+      $("#linkItems").click(function () {
+        $("#homeSection").css("display", "none");
+        $("#orderSection").css("display", "none");
+        $("#itemSection").css("display", "block");
+        $("#customerSection").css("display", "none");
+      });
+
+      $("#linkCustomer").click(function () {
+        $("#homeSection").css("display", "none");
+        $("#orderSection").css("display", "none");
+        $("#itemSection").css("display", "none");
+        $("#customerSection").css("display", "block");
+      });
+
+      $("#btnOrder").click(function () {
+        $("#homeSection").css("display", "none");
+        $("#orderSection").css("display", "block");
+        $("#itemSection").css("display", "none");
+        $("#customerSection").css("display", "none");
+      });
+      $("#btnItems").click(function () {
+        $("#homeSection").css("display", "none");
+        $("#orderSection").css("display", "none");
+        $("#itemSection").css("display", "block");
+        $("#customerSection").css("display", "none");
+      });
+      $("#btnCustomer").click(function () {
+        $("#homeSection").css("display", "none");
+        $("#orderSection").css("display", "none");
+        $("#itemSection").css("display", "none");
+        $("#customerSection").css("display", "block");
+      });
+      // Hide All Content End
+    </script>
+  </body>
+</html>
