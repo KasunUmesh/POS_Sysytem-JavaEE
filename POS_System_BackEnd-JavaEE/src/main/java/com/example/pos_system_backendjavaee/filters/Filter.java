@@ -13,7 +13,7 @@ public class Filter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
         String origin = req.getHeader("Origin");
-        if (origin.contains("http://")) {
+        if (origin.contains("http://127.0.0.1:5500")) {
             res.setHeader("Access-Control-Allow-Origin", origin);
             res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, HEADER");
             res.setHeader("Access-Control-Allow-Headers", "Content-Type");

@@ -560,7 +560,7 @@
               aria-label="Basic mixed styles example"
             >
               <div class="modal-body">
-                <form>
+                <form id="customerForm">
                   <div class="mb-3">
                     <label for="id" class="col-form-label">ID</label>
                     <input
@@ -569,6 +569,7 @@
                       placeholder="Enter ID"
                       aria-label="Enter ID"
                       id="customer_id"
+                      name="customerID"
                     />
                   </div>
                   <div class="mb-3">
@@ -579,6 +580,7 @@
                       placeholder="Enter Name"
                       aria-label="Enter Name"
                       id="customer_name"
+                      name="customerName"
                     />
                   </div>
 
@@ -590,6 +592,7 @@
                       placeholder="Enter Address"
                       aria-label="Enter Address"
                       id="customer_address"
+                      name="customerAddress"
                     />
                   </div>
 
@@ -601,6 +604,7 @@
                       placeholder="Enter Salary"
                       aria-label="Enter Salary"
                       id="customer_salary"
+                      name="customerSalary"
                     />
                   </div>
                 </form>
@@ -608,7 +612,7 @@
                   class="btn btn-primary"
                   type="button"
                   value="Add"
-                  id="btn_add"
+                  id="btn_CustomerAdd"
                 />
                 <button
                   id="btn_CustomerDelete"
@@ -682,17 +686,7 @@
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/JQuery/jquery-3.6.4.min.js"></script>
-
-    <script type="module" src="db/CustomerDB.js"></script>
-    <script type="module" src="db/ItemDB.js"></script>
-    <script type="module" src="db/OrderDB.js"></script>
-    <script type="module" src="model/Orders.js"></script>
-    <script type="module" src="model/orderDetails.js"></script>
-    <script type="module" src="model/Customer.js"></script>
-    <script type="module" src="model/Item.js"></script>
-    <script type="module" src="controller/ItemController.js"></script>
-    <script type="module" src="controller/CustomerController.js"></script>
-    <script type="module" src="controller/OrderController.js"></script>
+    <script defer src="Js/customerHandle.js"></script>
 
     <script>
       // Hide All Content
